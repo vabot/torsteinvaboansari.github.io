@@ -88,18 +88,20 @@ user-select: none;
 
 /* Hide links by default on small screens */
 .navbar .nav-links {
-display: none !important;
-position: absolute;
-top: 100%;
-right: 0;
-left: 0;
-background: #fff;
-flex-direction: column;
-gap: 0;
-text-align: center;
-border-top: 1px solid #eee;
-padding: 6px 0;
-z-index: 1000;
+  display: none !important;
+  position: fixed;
+  top: 56px;                    /* ≈ navbar height */
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(680px, 92vw);
+  background: #fff;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 6px 0;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  z-index: 2000;
 }
 
 .navbar .nav-links li { margin: 0; }
