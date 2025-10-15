@@ -35,7 +35,7 @@ z-index: 1000;
 }
 .navbar .logo {
 font-weight: 700;
-font-size: 1.4rem;
+font-size: 1rem;
 margin-right: 3rem; /* space between name and links */
 }
 .navbar .nav-links {
