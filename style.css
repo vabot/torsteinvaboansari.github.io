@@ -30,7 +30,7 @@ justify-content: space-between; /* before it was: space-between*/
 align-items: center;
 background: #fff;
 padding: 0.5rem 1rem; /* before it was: 0.5rem 1rem; */
-border-bottom: 1px solid #eee;
+border-bottom: 3px solid #f2f2f2;
 z-index: 1000;
 }
 .navbar .logo {
