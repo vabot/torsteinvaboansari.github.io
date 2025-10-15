@@ -62,12 +62,12 @@ a:hover {
 }
 /* Responsive Nav (mobile) */
 @media (max-width: 900px) {
-  .nav-toggle-label { display: block; }              /* show hamburger */
-  .navbar { position: relative; }
+  .nav-toggle-label { display: block; }      /* show hamburger */
+  .nav-toggle { display: block; position: absolute; left: -9999px; } /* keep accessible, hide visually */
 
-  /* hide links by default on mobile */
+  /* Hide links by default on small screens */
   .navbar .nav-links {
-    display: none;
+    display: none !important;
     position: absolute;
     top: 100%;
     right: 0;
@@ -84,9 +84,13 @@ a:hover {
   .navbar .nav-links li { margin: 0; }
   .navbar .nav-links a { display: block; padding: 14px 0; }
 
-  /* when hamburger is checked, show the menu */
-  .nav-toggle:checked ~ .nav-links { display: flex; }
+  /* When the checkbox is checked, show the menu
+     This matches your HTML order: input + label + ul */
+  .nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex !important;
+  }
 }
+
 
 
 /* Hero Sections */
