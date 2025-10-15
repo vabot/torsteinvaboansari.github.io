@@ -29,10 +29,17 @@ display: flex;
 justify-content: space-between; /* before it was: space-between*/
 align-items: center;
 background: #fff;
-padding: 1rem 4rem; /* before it was: 0.5rem 1rem; */
+padding: 0.5rem 1rem; /* before it was: 0.5rem 1rem; */
 border-bottom: 3px solid #eee;
 z-index: 1000;
 }
+.navbar .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem; /* spacing between elements */
+}
+
 .navbar .logo {
 font-weight: 700;
 font-size: 1.4rem;
