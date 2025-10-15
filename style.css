@@ -139,19 +139,19 @@ a:hover {
 }
 #hero-about {
   height: 50vh;
-  background-image: url("images/Leirvassbu_cool_look1.JPG");
+  background-image: url("images/shams1black&white");
 }
 #hero-work {
   height: 50vh;
-  background-image: url("images/work-bg.jpg");
+  background-image: url("images/work1.jpg");
 }
 #hero-values {
   height: 50vh;
-  background-image: url("images/values-bg.jpg");
+  background-image: url("images/ibiza.esVedra.jpg");
 }
 #hero-gallery {
   height: 50vh;
-  background-image: url("images/gallery-bg.jpg");
+  background-image: url("images/bryllup1.jpg");
 }
 
 /* Content Sections */
