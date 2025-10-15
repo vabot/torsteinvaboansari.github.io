@@ -30,7 +30,7 @@ justify-content: space-between; /* before it was: space-between*/
 align-items: center;
 background: #fff;
 padding: 0.5rem 1rem; /* before it was: 0.5rem 1rem; */
-border-bottom: 3px solid #f2f2f2;
+border-bottom: 1px solid #eee;
 z-index: 1000;
 }
 .navbar .logo {
@@ -373,4 +373,24 @@ font-size: 0.9rem;
 @media (max-width: 700px) {
   .footer-cta-wrap { margin: 28px auto 56px; }
 }
+
+.navbar .nav-links {
+  display: none !important;
+  position: fixed;
+  top: 56px;
+  right: clamp(16px, 4vw, 32px);
+  left: auto;
+  width: 260px;
+  background: #fff;
+  flex-direction: column;
+  text-align: left;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 6px 0;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  z-index: 2000;
+}
+
+
+border-bottom: 3px solid #f2f2f2;
 
