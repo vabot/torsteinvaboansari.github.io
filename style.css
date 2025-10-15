@@ -233,3 +233,48 @@ footer p {
 margin: 0.2rem;
 font-size: 0.9rem;
 }
+
+/* ===== Footer CTA Panel ===== */
+.footer-cta-wrap {
+  max-width: 1100px;
+  margin: 40px auto 70px;
+  padding: 0 1rem;
+}
+.footer-cta {
+  background: #0f172a;           /* deep navy */
+  color: #f5f7fb;                /* light text */
+  border-radius: 26px;           /* soft large corners */
+  padding: 26px 28px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+}
+.footer-cta h2 {
+  margin: 0 0 6px 0;
+  font-size: clamp(20px, 2.6vw, 28px);
+}
+.footer-cta p {
+  margin: 0;
+  color: #cfd6e6;                /* muted line under heading */
+}
+.footer-cta .actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.btn-pill {
+  display: inline-block;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e5e7eb;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn-pill:hover { filter: brightness(0.97); text-decoration: none; }
+
+/* spacing on small screens */
+@media (max-width: 700px) {
+  .footer-cta-wrap { margin: 28px auto 56px; }
+}
+
