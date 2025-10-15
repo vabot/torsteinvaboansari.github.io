@@ -21,7 +21,7 @@ text-decoration: underline;
 
 /* Navigation Bar */
 .navbar {
-position: relative;
+position: fixed;
 display: flex;
 justify-content: space-between; /* before it was: space-between*/
 align-items: center;
