@@ -380,5 +380,50 @@ font-size: 0.9rem;
 }
 
 
+
+/*THIS DIDN'T WORK!! FUUUCK  */
 border-bottom: 3px solid #f2f2f2;
+
+
+
+
+/* === MOBILE DROPDOWN: right-aligned, auto width, smooth === */
+.navbar { z-index: 4000; }              /* above hero overlay */
+.nav-toggle-label { position: relative; z-index: 4001; }  /* always tappable */
+
+@media (max-width: 1150px) {
+  .nav-toggle { position: absolute; left: -9999px; }      /* accessible, hidden */
+  .nav-toggle-label { display: block; cursor: pointer; padding: 4px 8px; }
+
+  .navbar .nav-links {
+    display: none !important;
+    position: fixed;                   /* stable under a fixed navbar */
+    top: 56px;                         /* ≈ navbar height — tweak if needed (52–72px) */
+    right: 12px;                       /* hugs right edge under hamburger */
+    left: auto;
+    width: max-content;                /* auto width to fit text */
+    max-width: 90vw;                   /* never overflow viewport */
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    flex-direction: column;
+    text-align: left;
+    padding: 6px 0;
+    gap: 0;
+    z-index: 4000;
+    overflow: hidden;
+  }
+
+  .navbar .nav-links li { white-space: nowrap; }
+  .navbar .nav-links a { display: block; padding: 12px 16px; }
+
+  /* toggle open */
+  .nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex !important;
+  }
+}
+
+/* Ensure hero overlay never blocks taps */
+.hero::before { z-index: 0; }
 
