@@ -276,8 +276,8 @@ font-size: 0.9rem;
   padding: 0 1rem;
 }
 .footer-cta {
-  background: #0f172a;           /* deep navy */
-  color: #f5f7fb;                /* light text */
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  color: #f9fafb;                /* light text */
   border-radius: 26px;           /* soft large corners */
   padding: 26px 28px;
   box-shadow: 0 6px 30px rgba(0,0,0,0.12);
@@ -288,7 +288,7 @@ font-size: 0.9rem;
 }
 .footer-cta p {
   margin: 0;
-  color: #cfd6e6;                /* muted line under heading */
+  color: #e0e7ff;                /* muted line under heading */
 }
 .footer-cta .actions {
   display: flex;
