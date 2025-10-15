@@ -61,28 +61,33 @@ a:hover {
   user-select: none;
 }
 /* Responsive Nav (mobile) */
-@media (max-width: 700px) {
-  .nav-toggle-label {
-    display: block;
-  }
-  .nav-links {
+@media (max-width: 900px) {
+  .nav-toggle-label { display: block; }              /* show hamburger */
+  .navbar { position: relative; }
+
+  /* hide links by default on mobile */
+  .navbar .nav-links {
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
-    width: 100%;
+    left: 0;
     background: #fff;
     flex-direction: column;
+    gap: 0;
     text-align: center;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #eee;
+    padding: 6px 0;
+    z-index: 1000;
   }
-  .nav-links li {
-    margin: 0.5rem 0;
-  }
-  .nav-toggle:checked ~ .nav-links {
-    display: flex;
-  }
+
+  .navbar .nav-links li { margin: 0; }
+  .navbar .nav-links a { display: block; padding: 14px 0; }
+
+  /* when hamburger is checked, show the menu */
+  .nav-toggle:checked ~ .nav-links { display: flex; }
 }
+
 
 /* Hero Sections */
 .hero {
