@@ -26,10 +26,10 @@ top: 0;
 left: 0;
 width: 100%;
 display: flex;
-justify-content: center; /* before it was: space-between*/
+justify-content: space-between; /* before it was: space-between*/
 align-items: center;
 background: #fff;
-padding: 1rem 0; /* before it was: 0.5rem 1rem; */
+padding: 1rem 4rem; /* before it was: 0.5rem 1rem; */
 border-bottom: 3px solid #eee;
 z-index: 1000;
 }
@@ -43,7 +43,7 @@ list-style: none;
 margin: 0;
 padding: 0;
 display: flex;
-gap: 2rem;
+gap: 1rem;
 }
 .navbar .nav-links li {
 display: block;
