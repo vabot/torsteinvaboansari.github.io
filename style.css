@@ -36,7 +36,6 @@ z-index: 1000;
 .navbar .logo {
 font-weight: 700;
 font-size: 1rem;
-margin-right: 3rem; /* space between name and links */
 }
 .navbar .nav-links {
 list-style: none;
@@ -49,10 +48,10 @@ gap: 1rem;
 display: block;
 }
 .navbar .nav-links a {
-padding: 0.25rem 0;
-font-size: 1rem; /* slightly larger */
-color: #000;
 text-decoration: none;
+color: #000;
+font-weight: 500;
+font-size: 1rem; /* slightly larger */
 }
 .navbar .nav-links a.active {
 font-weight: 700;
