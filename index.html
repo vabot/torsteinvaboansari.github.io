@@ -2,36 +2,233 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Torstein Vabo Ansari</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Torstein Vabo Ansari — Presence</title>
+  <meta name="description" content="Torstein Vabo Ansari — engineer, entrepreneur, former special forces. Building resilient, conscious systems where humans thrive." />
+  <meta name="color-scheme" content="light only" />
+
+  <!-- Open Graph / Share -->
+  <meta property="og:title" content="Torstein Vabo Ansari — Presence" />
+  <meta property="og:description" content="Engineer · Entrepreneur · Former Special Forces. Building foundations for a conscious, resilient civilisation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://torsteinvaboansari.com/" />
+  <meta property="og:image" content="https://torsteinvaboansari.com/og.jpg" />
+
   <style>
-    body {
-      font-family: system-ui, sans-serif;
-      max-width: 700px;
-      margin: 60px auto;
-      line-height: 1.6;
-      color: #222;
-      padding: 0 20px;
+    /* Base */
+    :root {
+      --maxw: 860px;
+      --pad: 24px;
+      --bg: #ffffff;
+      --fg: #161616;
+      --muted: #555;
+      --link: #0a66c2; /* LinkedIn blue-ish, subtle */
+      --radius: 16px;
     }
-    h1 { font-size: 2.2em; margin-bottom: 0.2em; }
-    img { max-width: 100%; border-radius: 12px; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* Header / Nav */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: hsla(0,0%,100%,0.9);
+      backdrop-filter: saturate(120%) blur(8px);
+      border-bottom: 1px solid #eee;
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      font-weight: 700; letter-spacing: 0.2px;
+    }
+    .menu { display: flex; gap: 18px; }
+    .menu a { color: var(--fg); opacity: 0.85; }
+    .menu a:hover { opacity: 1; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      padding: 56px var(--pad);
+      overflow: clip;
+      isolation: isolate;
+    }
+    /* Background image — replace with your photo path */
+    .hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        linear-gradient( to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.55) ),
+        url("images/denali1.jpg") center/cover no-repeat;
+      z-index: -2;
+    }
+    /* Fallback color if image missing */
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #0e1b2a 0%, #2b4a62 100%);
+      z-index: -3;
+    }
+    .card {
+      background: rgba(255,255,255,0.9);
+      color: var(--fg);
+      padding: clamp(18px, 3vw, 28px);
+      border-radius: var(--radius);
+      max-width: var(--maxw);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+    }
+
+    h1 {
+      font-size: clamp(28px, 4.6vw, 44px);
+      line-height: 1.15;
+      margin: 0 0 6px 0;
+    }
+    .tagline {
+      margin: 0 0 14px 0;
+      color: #2b2b2b;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .lede {
+      margin: 14px 0 0 0;
+      color: #222;
+      font-size: clamp(16px, 2.2vw, 18px);
+    }
+    .lede p { margin: 0 0 12px 0; }
+    .lede p:last-child { margin-bottom: 0; }
+
+    /* CTA / Footer strip */
+    .cta {
+      padding: 36px 0 48px;
+    }
+    .cta .panel {
+      background: #0f172a;
+      color: #f5f7fb;
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+    .cta h2 {
+      margin: 0 0 6px 0;
+      font-size: clamp(18px, 2.6vw, 22px);
+    }
+    .cta p { margin: 0 0 10px 0; color: #e7e9f2; }
+    .cta .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      background: #ffffff;
+      color: #0f172a;
+      border: 1px solid #e5e7eb;
+    }
+    .btn:hover { filter: brightness(0.95); text-decoration: none; }
+
+    footer {
+      border-top: 1px solid #eee;
+      padding: 18px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 768px) {
+      .menu { gap: 12px; font-size: 15px; }
+      .card { padding: 18px; }
+    }
   </style>
 </head>
 <body>
-  <h1>Torstein Vabo Ansari</h1>
-  <p>Engineer · Entrepreneur · Adventurer · Seeker</p>
-  <p>I build resilient systems for people and the planet — 
-     combining technology, endurance, and consciousness.</p>
+  <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
-  <h2>About</h2>
-  <p>I've lived many lives — from nanotechnology and quantum mechanics 
-     to the Norwegian Special Forces, expeditions in Arctic wilderness, 
-     and the deep work of inner transformation.</p>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">Torstein Vabo Ansari</div>
+      <nav class="menu" aria-label="Primary">
+        <!-- These links can point to pages you add later -->
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/projects.html">Work</a>
+        <a href="/values.html">Values</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <h2>Projects</h2>
-  
-  <h2>Contact</h2>
-  <p><a href="mailto:vabo.torstein@gmail.com">vabo.torstein@gmail.com</a> · 
-     <a href="https://https://www.linkedin.com/in/torstein-vabo-ansari/"->LinkedIn</a></p>
+  <main id="main">
+    <section class="hero" role="banner" aria-label="Presence">
+      <div class="wrap">
+        <div class="card" role="article">
+          <h1>Presence</h1>
+          <p class="tagline">Engineer · Entrepreneur · Former Special Forces · Father · Seeker</p>
+
+          <div class="lede">
+            <p>I have lived a full life, and on the way I have learnt what it takes to build something real.</p>
+
+            <p>Nanotechnology and quantum mechanics showed me the hidden fabric of reality.  
+            Entrepreneurship taught me the grind of turning ideas into companies.  
+            The special forces forged resilience when everything is on the line.  
+            Shamans, yogis, scientists, and coaches cracked me open to transformation of spirit and flesh.  
+            Fathering two children, one on earth and one in heaven, connects me to creation power beyond myself.</p>
+
+            <p>All of it connects. All of it was preparation.</p>
+
+            <p>Now I use every piece — the science and knowledge, the grit and discipline, the continuous personal growth, the love and wisdom from my children — to build foundations for a new world.</p>
+
+            <p>Advanced technology. Food systems. Energy production and infrastructure. Communities. Radical new ways of connecting and collaborating. Spaces where people thrive. A future where privacy is sacred, where people are not controlled, but protected by systems that empower them.  
+            New ways of governing where freedom and safety go hand in hand, where humans can truly grow, transform, and live with dignity.</p>
+
+            <p>I have a global community around me. Family, friends and partners across continents are weaving together companies, farms, retreats, trade routes into resilient infrastructures. These are not dreams. These are realities.</p>
+
+            <p>Where are we headed? Towards an advanced human civilisation — conscious, regenerative, resilient, and alive.</p>
+
+            <p><strong>If this resonates with you — let’s connect and build.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div class="panel">
+          <h2>Let’s connect</h2>
+          <p>Real conversations. Real projects. Real responsibility.</p>
+          <div class="actions">
+            <a class="btn" href="mailto:vabo.torstein@gmail.com">Email me</a>
+            <a class="btn" href="https://www.linkedin.com/in/torsteinansari" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="y"></span> Torstein Vabo Ansari · Norway
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
