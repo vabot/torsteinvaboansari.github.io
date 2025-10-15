@@ -22,9 +22,6 @@ text-decoration: underline;
 /* Navigation Bar */
 .navbar {
 position: fixed;
-top: 0;
-left: 0;
-width: 100%;
 display: flex;
 justify-content: space-between; /* before it was: space-between*/
 align-items: center;
@@ -32,12 +29,6 @@ background: #fff;
 padding: 0.5rem 1rem; /* before it was: 0.5rem 1rem; */
 border-bottom: 3px solid #eee;
 z-index: 1000;
-}
-.navbar .nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem; /* spacing between elements */
 }
 
 .navbar .logo {
@@ -47,18 +38,16 @@ font-size: 1.4rem;
 .navbar .nav-links {
 list-style: none;
 margin: 0;
-padding: 0;
+padding: 2rem;
 display: flex;
-gap: 2rem;
+gap: 1.5rem;
 }
 .navbar .nav-links li {
 display: block;
 }
 .navbar .nav-links a {
-text-decoration: none;
-color: #000;
+padding: 0.25rem 0;
 font-size: 1rem; /* slightly larger */
-font-weight: 500;
 }
 .navbar .nav-links a.active {
 font-weight: 700;
