@@ -381,9 +381,8 @@ font-size: 0.9rem;
 
 
 
-/*THIS DIDN'T WORK!! FUUUCK  */
-border-bottom: 3px solid #f2f2f2;
-
+/*Maybe this works */
+nav.navbar { border-bottom: 3px solid #f2f2f2 !important; }
 
 
 
