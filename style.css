@@ -283,3 +283,25 @@ font-size: 0.9rem;
   .footer-cta-wrap { margin: 28px auto 56px; }
 }
 
+/* ==== Desktop navbar tweaks ==== */
+@media (min-width: 901px) {
+/* make the top white bar taller and pulled in from the edges */
+.navbar {
+padding: 16px clamp(32px, 6vw, 96px);  /* top/bottom = 16px, left/right grows with screen */
+border-bottom: 1px solid #e6e6e6;
+}
+
+/* make text bigger */
+.navbar .logo {
+font-size: 1.25rem;   /* was ~1.1rem */
+letter-spacing: 0.2px;
+}
+.navbar .nav-links {
+gap: 2rem;            /* more space between items */
+}
+.navbar .nav-links a {
+font-size: 1rem;      /* bump link size */
+line-height: 1;
+padding: 0.35rem 0;   /* a bit more click area */
+}
+}
