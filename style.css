@@ -90,13 +90,13 @@ user-select: none;
 .navbar .nav-links {
   display: none !important;
   position: fixed;
-  top: 56px;                    /* ≈ navbar height */
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(680px, 92vw);
+  top: 56px;
+  right: clamp(16px, 4vw, 32px);
+  left: auto;
+  width: 260px;
   background: #fff;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   border: 1px solid #eee;
   border-radius: 12px;
   padding: 6px 0;
