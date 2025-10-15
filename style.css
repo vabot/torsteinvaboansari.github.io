@@ -21,31 +21,38 @@ text-decoration: underline;
 
 /* Navigation Bar */
 .navbar {
-position: relative;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
 display: flex;
-justify-content: space-between;
+justify-content: center; /* before it was: space-between*/
 align-items: center;
 background: #fff;
-padding: 0.5rem 1rem;
-border-bottom: 1px solid #eee;
+padding: 1rem 0; /* before it was: 0.5rem 1rem; */
+border-bottom: 3px solid #eee;
 z-index: 1000;
 }
 .navbar .logo {
 font-weight: 700;
-font-size: 1.1rem;
+font-size: 1.4rem;
+margin-right: 3rem; /* space between name and links */
 }
 .navbar .nav-links {
 list-style: none;
 margin: 0;
 padding: 0;
 display: flex;
-gap: 1.5rem;
+gap: 2rem;
 }
 .navbar .nav-links li {
 display: block;
 }
 .navbar .nav-links a {
 padding: 0.25rem 0;
+font-size: 1rem; /* slightly larger */
+color: #000;
+text-decoration: none;
 }
 .navbar .nav-links a.active {
 font-weight: 700;
@@ -59,6 +66,9 @@ display: none;
 font-size: 1.5rem;
 cursor: pointer;
 user-select: none;
+}
+.navbar .nav-links a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Nav (mobile) */
