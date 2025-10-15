@@ -33,7 +33,6 @@ padding: 0.5rem 1rem; /* before it was: 0.5rem 1rem; */
 border-bottom: 1px solid #eee;
 z-index: 1000;
 }
-
 .navbar .logo {
 font-weight: 700;
 font-size: 1.1rem;
@@ -68,6 +67,20 @@ user-select: none;
   text-decoration: underline;
 }
 
+/*These were added to make sure the nav-bar doesn't widen out of the right edge of the screen both on mobile and desktop  */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Tighter, responsive side padding so content fits */
+.navbar {
+  padding: 0.5rem clamp(1rem, 4vw, 2rem);
+}
+
+/* Slightly tighter spacing between links as the screen narrows */
+.navbar .nav-links {
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+
 /* Responsive Nav (mobile) */
 @media (max-width: 900px) {
 .nav-toggle-label { display: block; }      /* show hamburger */
@@ -98,6 +111,49 @@ This matches your HTML order: input + label + ul */
 display: flex !important;
 }
 }
+
+/*These were added to make sure the nav-bar doesn't widen out of the right edge of the screen both on mobile and desktop  */
+/* Was 900px — push to 1150px so we show hamburger before it overflows */
+@media (max-width: 1150px) {
+  .nav-toggle-label { display: block; }
+  .nav-toggle { display: block; position: absolute; left: -9999px; }
+
+  /* Full-width dropdown below the fixed navbar */
+  .navbar .nav-links {
+    display: none !important;
+    position: fixed;   /* important for iPhone */
+    top: 56px;         /* approx navbar height; tweak to your exact height */
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding: 6px 0;
+    z-index: 2000;
+  }
+  .navbar .nav-links a { display: block; padding: 14px 0; }
+
+  /* Show dropdown when toggled */
+  .nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex !important;
+  }
+}
+
+/* Keep navbar above hero overlays */
+.navbar { z-index: 2000; }
+
+/* Make the hamburger label always on top and easy to tap */
+.nav-toggle-label {
+  position: relative;
+  z-index: 2001;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+/* Ensure hero overlay sits below */
+.hero::before { z-index: 0; }
 
 /* Hero Sections */
 .hero {
