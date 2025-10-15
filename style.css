@@ -38,20 +38,11 @@ font-weight: 700;
 font-size: 1.1rem;
 }
 .navbar .nav-links {
-  display: none !important;
-  position: fixed;
-  top: 56px;
-  right: clamp(16px, 4vw, 32px);
-  left: auto;
-  width: 260px;
-  background: #fff;
-  flex-direction: column;
-  text-align: left;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 6px 0;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  z-index: 2000;
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+gap: 1.5rem;
 }
 .navbar .nav-links li {
 display: block;
@@ -128,20 +119,23 @@ display: flex !important;
   .nav-toggle { display: block; position: absolute; left: -9999px; }
 
   /* Full-width dropdown below the fixed navbar */
-  .navbar .nav-links {
-    display: none !important;
-    position: fixed;   /* important for iPhone */
-    top: 56px;         /* approx navbar height; tweak to your exact height */
-    left: 0;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    gap: 0;
-    text-align: center;
-    border-top: 1px solid #eee;
-    padding: 6px 0;
-    z-index: 2000;
-  }
+.navbar .nav-links {
+  display: none !important;
+  position: fixed;
+  top: 56px;
+  right: clamp(16px, 4vw, 32px);
+  left: auto;
+  width: 260px;
+  background: #fff;
+  flex-direction: column;
+  text-align: left;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 6px 0;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  z-index: 2000;
+}
+  
   .navbar .nav-links a { display: block; padding: 14px 0; }
 
   /* Show dropdown when toggled */
