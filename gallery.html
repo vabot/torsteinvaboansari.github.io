@@ -27,116 +27,81 @@
     </div>
   </header>
 
-    <!-- Filters -->
-  <section class="gallery-controls container">
-    <button class="chip is-active" data-filter="all">All</button>
-    <button class="chip" data-filter="expeditions">Expeditions</button>
-    <button class="chip" data-filter="training">Training</button>
-    <button class="chip" data-filter="family">Family</button>
-    <button class="chip" data-filter="sauna">Sauna & Water</button>
-    <button class="chip" data-filter="creation">Creation</button>
-  </section>
+<!-- Filters -->
+<section class="gallery-controls container">
+  <button class="chip is-active" data-filter="all">All</button>
+  <button class="chip" data-filter="expedition">Expedition</button>
+  <button class="chip" data-filter="family">Family</button>
+  <button class="chip" data-filter="retreat">Retreat</button>
+  <button class="chip" data-filter="community">Community</button>
+  <button class="chip" data-filter="personal">Personal</button>
+</section>
 
-  <!-- Grid -->
-  <section class="gallery-grid container" id="galleryGrid" aria-live="polite">
-    <!-- Example cards — copy/paste and change src/alt/figcaption/category -->
-    <figure class="card" data-cat="expeditions">
-      <a href="images/expeditions/greenland-packraft@2x.jpg">
-        <img
-          src="images/expeditions/greenland-packraft_640.jpg"
-          srcset="
-            images/expeditions/greenland-packraft_640.jpg 640w,
-            images/expeditions/greenland-packraft_960.jpg 960w,
-            images/expeditions/greenland-packraft_1440.jpg 1440w,
-            images/expeditions/greenland-packraft@2x.jpg 1920w
-          "
-          sizes="(max-width: 700px) 100vw, (max-width: 1200px) 33vw, 25vw"
-          alt="Packraft and glacier light in Greenland fjord"
-          loading="lazy"
-          decoding="async"
-        />
-      </a>
-      <figcaption>Greenland fjord — packraft approach at dusk</figcaption>
-    </figure>
+<!-- Grid -->
+<section class="gallery-grid container" id="galleryGrid" aria-live="polite">
+  <!-- One image per card; href === src so lightbox shows the same file -->
+  <figure class="card" data-cat="expedition">
+    <a href="images/expedition/greenland-packraft.jpg">
+      <img
+        src="images/expedition/greenland-packraft.jpg"
+        alt="Packraft and glacier light in Greenland fjord"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+    <figcaption>Greenland fjord — packraft approach at dusk</figcaption>
+  </figure>
 
-    <figure class="card" data-cat="training">
-      <a href="images/training/zone5-race@2x.jpg">
-        <img
-          src="images/training/zone5-race_640.jpg"
-          srcset="
-            images/training/zone5-race_640.jpg 640w,
-            images/training/zone5-race_960.jpg 960w,
-            images/training/zone5-race_1440.jpg 1440w,
-            images/training/zone5-race@2x.jpg 1920w
-          "
-          sizes="(max-width: 700px) 100vw, (max-width: 1200px) 33vw, 25vw"
-          alt="Trail race section in steep forest"
-          loading="lazy"
-          decoding="async"
-        />
-      </a>
-      <figcaption>Trail race — holding ~90% in Zone 5</figcaption>
-    </figure>
+  <figure class="card" data-cat="family">
+    <a href="images/family/shoreline.jpg">
+      <img
+        src="images/family/shoreline.jpg"
+        alt="Holding my daughter’s hand on the shoreline"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+    <figcaption>Shoreline — the small big moments</figcaption>
+  </figure>
 
-    <figure class="card" data-cat="family">
-      <a href="images/family/shoreline@2x.jpg">
-        <img
-          src="images/family/shoreline_640.jpg"
-          srcset="
-            images/family/shoreline_640.jpg 640w,
-            images/family/shoreline_960.jpg 960w,
-            images/family/shoreline_1440.jpg 1440w,
-            images/family/shoreline@2x.jpg 1920w
-          "
-          sizes="(max-width: 700px) 100vw, (max-width: 1200px) 33vw, 25vw"
-          alt="Holding my daughter’s hand on the shoreline"
-          loading="lazy"
-          decoding="async"
-        />
-      </a>
-      <figcaption>Shoreline — the small big moments</figcaption>
-    </figure>
+  <figure class="card" data-cat="retreat">
+    <a href="images/retreat/ice-dip.jpg">
+      <img
+        src="images/retreat/ice-dip.jpg"
+        alt="Ice-water plunge next to a floating sauna"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+    <figcaption>Sauna → cold sea — breath as anchor</figcaption>
+  </figure>
 
-    <figure class="card" data-cat="sauna">
-      <a href="images/sauna/ice-dip@2x.jpg">
-        <img
-          src="images/sauna/ice-dip_640.jpg"
-          srcset="
-            images/sauna/ice-dip_640.jpg 640w,
-            images/sauna/ice-dip_960.jpg 960w,
-            images/sauna/ice-dip_1440.jpg 1440w,
-            images/sauna/ice-dip@2x.jpg 1920w
-          "
-          sizes="(max-width: 700px) 100vw, (max-width: 1200px) 33vw, 25vw"
-          alt="Ice-water plunge next to a floating sauna"
-          loading="lazy"
-          decoding="async"
-        />
-      </a>
-      <figcaption>Sauna → cold sea — breath as anchor</figcaption>
-    </figure>
+  <figure class="card" data-cat="community">
+    <a href="images/community/community-gathering.jpg">
+      <img
+        src="images/community/community-gathering.jpg"
+        alt="Community gathering circle outdoors"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+    <figcaption>Gathering — building strong circles</figcaption>
+  </figure>
 
-    <figure class="card" data-cat="creation">
-      <a href="images/creation/whiteboard-masterplan@2x.jpg">
-        <img
-          src="images/creation/whiteboard-masterplan_640.jpg"
-          srcset="
-            images/creation/whiteboard-masterplan_640.jpg 640w,
-            images/creation/whiteboard-masterplan_960.jpg 960w,
-            images/creation/whiteboard-masterplan_1440.jpg 1440w,
-            images/creation/whiteboard-masterplan@2x.jpg 1920w
-          "
-          sizes="(max-width: 700px) 100vw, (max-width: 1200px) 33vw, 25vw"
-          alt="Whiteboard with ecosystem master plan sketches"
-          loading="lazy"
-          decoding="async"
-        />
-      </a>
-      <figcaption>Master Plan — sketching ecosystem flows</figcaption>
-    </figure>
+  <figure class="card" data-cat="personal">
+    <a href="images/personal/whiteboard-masterplan.jpg">
+      <img
+        src="images/personal/whiteboard-masterplan.jpg"
+        alt="Whiteboard with ecosystem master plan sketches"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+    <figcaption>Master Plan — sketching ecosystem flows</figcaption>
+  </figure>
 
-    <!-- Add more <figure class="card" data-cat="…"> blocks as needed -->
-  </section>
+  <!-- Add more <figure class="card" data-cat="expedition|family|retreat|community|personal">... -->
+</section>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
