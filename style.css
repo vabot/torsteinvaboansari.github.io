@@ -1,341 +1,238 @@
-/* Global Styles */
 body {
-margin: 0;
-font-family: 'Inter', sans-serif;
-color: #000;
-background-color: #fff;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #000;
+  background-color: #fff;
 }
 h1, h2, h3, h4, h5, h6 {
-margin: 0;
+  margin: 0;
 }
 p {
-margin: 0;
+  margin: 0;
 }
 a {
-color: #000;
-text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 a:hover {
-text-decoration: underline;
+  text-decoration: underline;
 }
 
-/* Navigation Bar */
 .navbar {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-display: flex;
-justify-content: space-between; /* before it was: space-between*/
-align-items: center;
-background: #fff;
-padding: 0.5rem 1rem; /* before it was: 0.5rem 1rem; */
-border-bottom: 1px solid #eee;
-z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0.5rem clamp(1rem, 4vw, 2rem);
+  border-bottom: 3px solid #f2f2f2;
+  z-index: 4000;
 }
 .navbar .logo {
-font-weight: 700;
-font-size: 1.1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 .navbar .nav-links {
-list-style: none;
-margin: 0;
-padding: 0;
-display: flex;
-gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
 }
 .navbar .nav-links li {
-display: block;
+  display: block;
 }
 .navbar .nav-links a {
-padding: 0.25rem 0;
+  padding: 0.25rem 0;
 }
 .navbar .nav-links a.active {
-font-weight: 700;
-text-decoration: underline;
+  font-weight: 700;
+  text-decoration: underline;
 }
 .nav-toggle {
-display: none;
+  display: none;
 }
 .nav-toggle-label {
-display: none;
-font-size: 1.5rem;
-cursor: pointer;
-user-select: none;
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  z-index: 4001;
+  padding: 0.25rem 0.5rem;
 }
 .navbar .nav-links a:hover {
   text-decoration: underline;
 }
 
-/*These were added to make sure the nav-bar doesn't widen out of the right edge of the screen both on mobile and desktop  */
-*, *::before, *::after { box-sizing: border-box; }
-
-/* Tighter, responsive side padding so content fits */
-.navbar {
-  padding: 0.5rem clamp(1rem, 4vw, 2rem);
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-/* Slightly tighter spacing between links as the screen narrows */
-.navbar .nav-links {
-  gap: clamp(0.75rem, 2vw, 1.5rem);
-}
-
-
-/* Responsive Nav (mobile) */
-@media (max-width: 900px) {
-.nav-toggle-label { display: block; }      /* show hamburger */
-.nav-toggle { display: block; position: absolute; left: -9999px; } /* keep accessible, hide visually */
-
-/* Hide links by default on small screens */
-.navbar .nav-links {
-  display: none !important;
-  position: fixed;
-  top: 56px;
-  right: clamp(16px, 4vw, 32px);
-  left: auto;
-  width: 260px;
-  background: #fff;
-  flex-direction: column;
-  text-align: left;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 6px 0;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  z-index: 2000;
-}
-
-.navbar .nav-links li { margin: 0; }
-.navbar .nav-links a { display: block; padding: 14px 0; }
-
-/* When the checkbox is checked, show the menu
-This matches your HTML order: input + label + ul */
-.nav-toggle:checked + .nav-toggle-label + .nav-links {
-display: flex !important;
-}
-}
-
-/*These were added to make sure the nav-bar doesn't widen out of the right edge of the screen both on mobile and desktop  */
-/* Was 900px — push to 1150px so we show hamburger before it overflows */
-@media (max-width: 1150px) {
-  .nav-toggle-label { display: block; }
-  .nav-toggle { display: block; position: absolute; left: -9999px; }
-
-  /* Full-width dropdown below the fixed navbar */
-.navbar .nav-links {
-  display: none !important;
-  position: fixed;
-  top: 56px;
-  right: clamp(16px, 4vw, 32px);
-  left: auto;
-  width: 260px;
-  background: #fff;
-  flex-direction: column;
-  text-align: left;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 6px 0;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  z-index: 2000;
-}
-  
-  .navbar .nav-links a { display: block; padding: 14px 0; }
-
-  /* Show dropdown when toggled */
-  .nav-toggle:checked + .nav-toggle-label + .nav-links {
-    display: flex !important;
-  }
-}
-
-/* Keep navbar above hero overlays */
-.navbar { z-index: 2000; }
-
-/* Make the hamburger label always on top and easy to tap */
-.nav-toggle-label {
-  position: relative;
-  z-index: 2001;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-}
-
-/* Ensure hero overlay sits below */
-.hero::before { z-index: 0; }
-
-
-
-/* Hero Sections */
 .hero {
-position: relative;
-width: 100%;
-color: #fff;
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero::before {
-content: "";
-position: absolute;
-top: 0; left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.5);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 .hero-content {
-position: relative;
-text-align: center;
-padding: 0 1rem;
-height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  position: relative;
+  text-align: center;
+  padding: 0 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .hero h1 {
-font-size: 2.5rem;
-font-weight: 700;
-margin: 0.5rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
 }
 .hero .subtitle {
-font-size: 1.2rem;
-font-weight: 400;
-margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
 }
 
-/* Hero text paragraphs (used on About/Work/Values/Gallery heroes) */
 .hero .opening {
-max-width: 60ch;
-font-size: 1rem;
-line-height: 1.6;
-margin-bottom: 1rem;
+  max-width: 60ch;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 .hero .opening-tagline {
-font-size: 1rem;
-fontStyle: italic;
+  font-size: 1rem;
+  font-style: italic;
 }
 
-/*These were specifically made for the text below the hero-image in index-file  */
-/* Intro text below hero */
 .intro-text {
   background: #fff;
   padding: 3rem 1rem;
 }
-
 .intro-text .content {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
-
 .intro-text .opening {
   font-size: 1rem;
   line-height: 1.7;
   color: #333;
   margin-bottom: 1rem;
 }
-
 .intro-text .opening-tagline {
   font-size: 1rem;
-  font-style: italic;   /* note: CSS uses font-style (hyphen) */
+  font-style: italic;
   color: #666;
 }
 
-
-
-/* Page-Specific Hero Heights (different background images per page) */
 #hero-home {
-height: 100vh; /* full-screen hero for home */
-background-image: url("images/denali1.jpg"); /* placeholder image path */
+  height: 100vh;
+  background-image: url("images/denali1.jpg");
 }
 #hero-about {
-height: 50vh;
-background-image: url("images/shams2.color.jpg");
+  height: 50vh;
+  background-image: url("images/shams2.color.jpg");
 }
 #hero-work {
-height: 50vh;
-background-image: url("images/work1.jpg");
+  height: 50vh;
+  background-image: url("images/work1.jpg");
 }
 #hero-values {
-height: 50vh;
-background-image: url("images/ibiza.esVedra1.jpg");
+  height: 50vh;
+  background-image: url("images/ibiza.esVedra1.jpg");
 }
 #hero-gallery {
-height: 50vh;
-background-image: url("images/bryllup1.jpg");
+  height: 50vh;
+  background-image: url("images/bryllup1.jpg");
 }
 
-/* Content Sections */
 .content {
-max-width: 800px;
-margin: 2rem auto;
-padding: 0 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 .content section {
-margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 .content h2 {
-font-size: 1.5rem;
-font-weight: 700;
-margin: 1.5rem 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1.5rem 0 0.5rem;
 }
 .content p {
-font-size: 1rem;
-line-height: 1.6;
-margin: 0.5rem 0 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0.5rem 0 0;
 }
 
-/* Section images (About page sections) */
 .section-photo {
-width: 100%;
-height: auto;
-display: block;
-margin: 0.5rem 0 1rem;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.5rem 0 1rem;
 }
 
-/* Values List */
 .values-list {
-list-style: none;
-padding: 0;
-margin: 2rem 0;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
 }
 .values-list li {
-font-size: 1.1rem;
-line-height: 1.5;
-margin: 0.5rem 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0.5rem 0;
 }
 .values-list strong {
-font-weight: 700;
+  font-weight: 700;
 }
 .values-conclusion {
-text-align: center;
-margin: 2rem 0 1rem;
-font-style: italic;
+  text-align: center;
+  margin: 2rem 0 1rem;
+  font-style: italic;
 }
 
-/* Gallery Grid */
 .gallery-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 10px;
-padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 1rem;
 }
 .gallery-grid img {
-width: 100%;
-height: auto;
-display: block;
-object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
-/* Footer */
 footer {
-text-align: center;
-padding: 1rem 0;
-border-top: 1px solid #eee;
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid #eee;
 }
 footer p {
-margin: 0.2rem;
-font-size: 0.9rem;
+  margin: 0.2rem;
+  font-size: 0.9rem;
 }
 
-/* ===== Footer CTA Panel ===== */
+/* Footer CTA Panel */
 .footer-cta-wrap {
   max-width: 1100px;
   margin: 40px auto 70px;
@@ -343,10 +240,10 @@ font-size: 0.9rem;
 }
 .footer-cta {
   background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-  color: #f9fafb;                /* light text */
-  border-radius: 26px;           /* soft large corners */
+  color: #f9fafb;
+  border-radius: 26px;
   padding: 26px 28px;
-  box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
 }
 .footer-cta h2 {
   margin: 0 0 6px 0;
@@ -354,7 +251,7 @@ font-size: 0.9rem;
 }
 .footer-cta p {
   margin: 0;
-  color: #e0e7ff;                /* muted line under heading */
+  color: #e0e7ff;
 }
 .footer-cta .actions {
   display: flex;
@@ -364,7 +261,7 @@ font-size: 0.9rem;
 }
 .btn-pill {
   display: inline-block;
-  background: #ffffff;
+  background: #fff;
   color: #0f172a;
   border: 1px solid #e5e7eb;
   padding: 12px 18px;
@@ -372,40 +269,39 @@ font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
 }
-.btn-pill:hover { filter: brightness(0.97); text-decoration: none; }
-
-/* spacing on small screens */
-@media (max-width: 700px) {
-  .footer-cta-wrap { margin: 28px auto 56px; }
+.btn-pill:hover {
+  filter: brightness(0.97);
+  text-decoration: none;
 }
 
-
-
-/*Maybe this works */
-nav.navbar { border-bottom: 3px solid #f2f2f2 !important; }
-
-
-
-/* === MOBILE DROPDOWN: right-aligned, auto width, smooth === */
-.navbar { z-index: 4000; }              /* above hero overlay */
-.nav-toggle-label { position: relative; z-index: 4001; }  /* always tappable */
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .footer-cta-wrap {
+    margin: 28px auto 56px;
+  }
+}
 
 @media (max-width: 1150px) {
-  .nav-toggle { position: absolute; left: -9999px; }      /* accessible, hidden */
-  .nav-toggle-label { display: block; cursor: pointer; padding: 4px 8px; }
-
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    left: -9999px;
+  }
+  .nav-toggle-label {
+    display: block;
+  }
   .navbar .nav-links {
     display: none !important;
-    position: fixed;                   /* stable under a fixed navbar */
-    top: 56px;                         /* ≈ navbar height — tweak if needed (52–72px) */
-    right: 12px;                       /* hugs right edge under hamburger */
+    position: fixed;
+    top: 56px;
+    right: 12px;
     left: auto;
-    width: max-content;                /* auto width to fit text */
-    max-width: 90vw;                   /* never overflow viewport */
+    width: max-content;
+    max-width: 90vw;
     background: #fff;
     border: 1px solid #eee;
     border-radius: 12px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     flex-direction: column;
     text-align: left;
     padding: 6px 0;
@@ -413,16 +309,15 @@ nav.navbar { border-bottom: 3px solid #f2f2f2 !important; }
     z-index: 4000;
     overflow: hidden;
   }
-
-  .navbar .nav-links li { white-space: nowrap; }
-  .navbar .nav-links a { display: block; padding: 12px 16px; }
-
-  /* toggle open */
+  .navbar .nav-links li {
+    white-space: nowrap;
+    margin: 0;
+  }
+  .navbar .nav-links a {
+    display: block;
+    padding: 12px 16px;
+  }
   .nav-toggle:checked + .nav-toggle-label + .nav-links {
     display: flex !important;
   }
 }
-
-/* Ensure hero overlay never blocks taps */
-.hero::before { z-index: 0; }
-
