@@ -145,23 +145,23 @@ a:hover {
 
 #hero-home {
   height: 100vh;
-  background-image: url("images/denali1.jpg");
+  background-image: url("images2/denali1.jpg");
 }
 #hero-about {
   height: 50vh;
-  background-image: url("images/shams2.color.jpg");
+  background-image: url("images2/Leirvassbu.cool.look1.jpg");
 }
 #hero-work {
   height: 50vh;
-  background-image: url("images/work1.jpg");
+  background-image: url("images2/work1.jpg");
 }
 #hero-values {
   height: 50vh;
-  background-image: url("images/ibiza.esVedra1.jpg");
+  background-image: url("images2/ibiza.esVedra1.jpg");
 }
 #hero-gallery {
   height: 50vh;
-  background-image: url("images/bryllup1.jpg");
+  background-image: url("images2/bryllup1.jpg");
 }
 
 .content {
