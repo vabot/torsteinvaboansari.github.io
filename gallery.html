@@ -27,15 +27,221 @@
     </div>
   </header>
 
-  <div class="gallery-grid">
-    <!-- Example image thumbnails; replace src and alt with your own images -->
-    <img src="images/gallery1.jpg" alt="Outdoor expedition" />
-    <img src="images/gallery2.jpg" alt="Arctic training session" />
-    <img src="images/gallery3.jpg" alt="Family moment" />
-    <img src="images/gallery4.jpg" alt="Nature exploration" />
-    <img src="images/gallery5.jpg" alt="Community gathering" />
-    <img src="images/gallery6.jpg" alt="Meditation retreat" />
+    <!-- Filters -->
+  <section class="gallery-controls container">
+    <button class="chip is-active" data-filter="all">All</button>
+    <button class="chip" data-filter="expeditions">Expeditions</button>
+    <button class="chip" data-filter="training">Training</button>
+    <button class="chip" data-filter="family">Family</button>
+    <button class="chip" data-filter="sauna">Sauna & Water</button>
+    <button class="chip" data-filter="creation">Creation</button>
+  </section>
+
+  <!-- Grid -->
+  <section class="gallery-grid container" id="galleryGrid" aria-live="polite">
+    <!-- Example cards — copy/paste and change src/alt/figcaption/category -->
+    <figure class="card" data-cat="expeditions">
+      <a href="images/expeditions/greenland-packraft@2x.jpg">
+        <img
+          src="images/expeditions/greenland-packraft_640.jpg"
+          srcset="
+            images/expeditions/greenland-packraft_640.jpg 640w,
+            images/expeditions/greenland-packraft_960.jpg 960w,
+            images/expeditions/greenland-packraft_1440.jpg 1440w,
+            images/expeditions/greenland-packraft@2x.jpg 1920w
+          "
+          sizes="(max-width: 700px) 100vw, (max-width: 1200px) 33vw, 25vw"
+          alt="Packraft and glacier light in Greenland fjord"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+      <figcaption>Greenland fjord — packraft approach at dusk</figcaption>
+    </figure>
+
+    <figure class="card" data-cat="training">
+      <a href="images/training/zone5-race@2x.jpg">
+        <img
+          src="images/training/zone5-race_640.jpg"
+          srcset="
+            images/training/zone5-race_640.jpg 640w,
+            images/training/zone5-race_960.jpg 960w,
+            images/training/zone5-race_1440.jpg 1440w,
+            images/training/zone5-race@2x.jpg 1920w
+          "
+          sizes="(max-width: 700px) 100vw, (max-width: 1200px) 33vw, 25vw"
+          alt="Trail race section in steep forest"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+      <figcaption>Trail race — holding ~90% in Zone 5</figcaption>
+    </figure>
+
+    <figure class="card" data-cat="family">
+      <a href="images/family/shoreline@2x.jpg">
+        <img
+          src="images/family/shoreline_640.jpg"
+          srcset="
+            images/family/shoreline_640.jpg 640w,
+            images/family/shoreline_960.jpg 960w,
+            images/family/shoreline_1440.jpg 1440w,
+            images/family/shoreline@2x.jpg 1920w
+          "
+          sizes="(max-width: 700px) 100vw, (max-width: 1200px) 33vw, 25vw"
+          alt="Holding my daughter’s hand on the shoreline"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+      <figcaption>Shoreline — the small big moments</figcaption>
+    </figure>
+
+    <figure class="card" data-cat="sauna">
+      <a href="images/sauna/ice-dip@2x.jpg">
+        <img
+          src="images/sauna/ice-dip_640.jpg"
+          srcset="
+            images/sauna/ice-dip_640.jpg 640w,
+            images/sauna/ice-dip_960.jpg 960w,
+            images/sauna/ice-dip_1440.jpg 1440w,
+            images/sauna/ice-dip@2x.jpg 1920w
+          "
+          sizes="(max-width: 700px) 100vw, (max-width: 1200px) 33vw, 25vw"
+          alt="Ice-water plunge next to a floating sauna"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+      <figcaption>Sauna → cold sea — breath as anchor</figcaption>
+    </figure>
+
+    <figure class="card" data-cat="creation">
+      <a href="images/creation/whiteboard-masterplan@2x.jpg">
+        <img
+          src="images/creation/whiteboard-masterplan_640.jpg"
+          srcset="
+            images/creation/whiteboard-masterplan_640.jpg 640w,
+            images/creation/whiteboard-masterplan_960.jpg 960w,
+            images/creation/whiteboard-masterplan_1440.jpg 1440w,
+            images/creation/whiteboard-masterplan@2x.jpg 1920w
+          "
+          sizes="(max-width: 700px) 100vw, (max-width: 1200px) 33vw, 25vw"
+          alt="Whiteboard with ecosystem master plan sketches"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+      <figcaption>Master Plan — sketching ecosystem flows</figcaption>
+    </figure>
+
+    <!-- Add more <figure class="card" data-cat="…"> blocks as needed -->
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lb-close" aria-label="Close (Esc)">&times;</button>
+    <button class="lb-prev" aria-label="Previous (←)">&larr;</button>
+    <figure class="lb-figure">
+      <img id="lbImg" alt="" />
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lb-next" aria-label="Next (→)">&rarr;</button>
   </div>
+
+  <script>
+    // --- Filtering ---
+    const chips = document.querySelectorAll('.gallery-controls .chip');
+    const cards = document.querySelectorAll('.gallery-grid .card');
+    chips.forEach(btn => {
+      btn.addEventListener('click', () => {
+        chips.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const f = btn.dataset.filter;
+        cards.forEach(card => {
+          const show = f === 'all' || card.dataset.cat.includes(f);
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+
+    // --- Lightbox ---
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCap = document.getElementById('lbCap');
+    const closeBtn = lightbox.querySelector('.lb-close');
+    const prevBtn = lightbox.querySelector('.lb-prev');
+    const nextBtn = lightbox.querySelector('.lb-next');
+
+    const galleryItems = Array.from(document.querySelectorAll('#galleryGrid figure a'));
+    let idx = -1;
+
+    function openLB(i) {
+      idx = i;
+      const a = galleryItems[idx];
+      const fig = a.closest('figure');
+      const full = a.getAttribute('href');
+      const cap = fig.querySelector('figcaption')?.textContent || a.querySelector('img')?.alt || '';
+      lbImg.src = full;
+      lbImg.alt = cap;
+      lbCap.textContent = cap;
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      lightbox.classList.add('open');
+      closeBtn.focus();
+      history.pushState({ lb: true }, '', '#photo-' + idx); // optional deep-link
+    }
+    function closeLB() {
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      lightbox.classList.remove('open');
+      lbImg.removeAttribute('src');
+      if (location.hash.startsWith('#photo-')) history.replaceState(null, '', ' ');
+    }
+    function nextLB(dir = 1) {
+      if (!galleryItems.length) return;
+      idx = (idx + dir + galleryItems.length) % galleryItems.length;
+      openLB(idx);
+    }
+
+    galleryItems.forEach((a, i) => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        openLB(i);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeLB);
+    prevBtn.addEventListener('click', () => nextLB(-1));
+    nextBtn.addEventListener('click', () => nextLB(1));
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLB();
+    });
+
+    // Keyboard support
+    window.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('open')) {
+        if (e.key === 'Escape') closeLB();
+        if (e.key === 'ArrowRight') nextLB(1);
+        if (e.key === 'ArrowLeft') nextLB(-1);
+      }
+    });
+
+    // Simple swipe (touch)
+    let startX = 0;
+    lbImg.addEventListener('touchstart', (e) => startX = e.touches[0].clientX, {passive:true});
+    lbImg.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) nextLB(dx < 0 ? 1 : -1);
+    }, {passive:true});
+
+    // Deep-link open (#photo-N)
+    if (location.hash.startsWith('#photo-')) {
+      const n = parseInt(location.hash.split('-')[1], 10);
+      if (!Number.isNaN(n) && n >= 0 && n < galleryItems.length) openLB(n);
+    }
+  </script>
+
 
   <div class="footer-cta-wrap">
     <div class="footer-cta">
