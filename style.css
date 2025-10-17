@@ -420,3 +420,62 @@ footer p {
 }
 
 
+
+/* Vertical Timeline */
+.timeline {
+  margin-top: 3rem;
+  padding: 1rem 0 2rem 0;
+  position: relative;
+}
+
+.timeline h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.timeline-wrapper {
+  position: relative;
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid #ddd;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.timeline-year {
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-content {
+  color: #333;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Optional subtle hover effect */
+.timeline-item:hover .timeline-content {
+  color: #000;
+  transform: translateX(2px);
+  transition: all 0.2s ease;
+}
+
+
+
