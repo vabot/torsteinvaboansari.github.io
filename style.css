@@ -122,35 +122,40 @@ a:hover {
   font-style: italic;
 }
 
+/* CODE FOR ALIGNMENT OF INTRO TEXT ON INDEX.HTML */
+
 .intro-text {
   background: #fff;
-  padding: 3rem 1rem;
+  padding-block: clamp(2rem, 4vw, 5rem);
 }
 
 .intro-text .content {
   max-width: 800px;
-  margin: 2rem auto;
-  text-align: left;
-  padding-left: 3.5rem; 
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 2rem); /* jevn sidepadding på alle skjermer */
 }
 
-@media (max-width: 700px) {
-  .intro-text .content {
-    padding-left: 1rem;
-  }
+/* Hvis du ønsker litt ekstra innrykk på større skjermer, gjør det her */
+@media (min-width: 900px) {
+  .intro-text .content { padding-inline-start: 3.5rem; }
 }
 
+/* Tekststil */
 .intro-text .opening {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #333;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+  line-height: 1.75;
+  color: #222;
   margin-bottom: 1rem;
 }
 
+/* legg avstand mellom avsnitt automatisk */
+.intro-text .content p + p { margin-top: 1rem; }
+
 .intro-text .opening-tagline {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-style: italic;
   color: #666;
+  margin-top: 0.5rem;
 }
 
 #hero-home {
