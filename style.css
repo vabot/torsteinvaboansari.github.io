@@ -127,18 +127,13 @@ a:hover {
   padding: 3rem 1rem;
 }
 
-/* Intro aligns with timeline text start:
-   .timeline has margin-left: 1.5rem and padding-left: 1rem,
-   and .content already has padding-left: 1rem.
-   1rem + 1.5rem + 1rem = 3.5rem total from the page edge. */
 .intro-text .content {
   max-width: 800px;
-  margin: 2rem auto;          /* keep same vertical rhythm as .content */
+  margin: 2rem auto;
   text-align: left;
-  padding-left: 3.5rem;       /* exact alignment with timeline text */
+  padding-left: 5.5rem; /* aligns perfectly with timeline text */
 }
 
-/* Mobile: don’t squeeze — revert to standard padding */
 @media (max-width: 700px) {
   .intro-text .content {
     padding-left: 1rem;
