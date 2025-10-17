@@ -131,7 +131,7 @@ a:hover {
   max-width: 800px;
   margin: 2rem auto;
   text-align: left;
-  padding-left: 5.5rem; /* aligns perfectly with timeline text */
+  padding-left: 4.5rem; 
 }
 
 @media (max-width: 700px) {
