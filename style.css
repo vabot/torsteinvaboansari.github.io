@@ -464,19 +464,4 @@ footer p {
   transition: all 0.2s ease;
 }
 
-/* Make the timeline match intro-text width & alignment */
-.timeline.container {
-  max-width: 800px;
-  margin-inline: auto;
-  padding-inline: clamp(1rem, 3vw, 2rem);
-}
-
-/* Same extra left indent on larger screens as intro-text */
-@media (min-width: 900px) {
-  .timeline.container {
-    padding-inline-start: 3.5rem;
-  }
-}
-
-
 
