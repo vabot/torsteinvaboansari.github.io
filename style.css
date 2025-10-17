@@ -126,17 +126,21 @@ a:hover {
   background: #fff;
   padding: 3rem 1rem;
 }
+
 .intro-text .content {
   max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+  margin-left: 60px; /* adjust this to match the timeline start */
+  margin-right: auto;
+  text-align: left;
 }
+
 .intro-text .opening {
   font-size: 1rem;
   line-height: 1.7;
   color: #333;
   margin-bottom: 1rem;
 }
+
 .intro-text .opening-tagline {
   font-size: 1rem;
   font-style: italic;
