@@ -127,6 +127,7 @@ a:hover {
 .intro-text {
   background: #fff;
   padding-block: clamp(2rem, 4vw, 5rem);
+  padding-bottom: 2rem;
 }
 
 .intro-text .content {
@@ -410,7 +411,7 @@ footer p {
 
 /* Vertical Timeline */
 .timeline {
-  margin-top: 3rem;
+  margin-top: 1rem; 
   position: relative;
   background: #fff;
   padding-block: clamp(2rem, 4vw, 5rem);
