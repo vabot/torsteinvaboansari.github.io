@@ -472,10 +472,6 @@ footer p {
   transition: all 0.2s ease;
 }
 
-
-
-
-
 @media (min-width: 900px) {
   .timeline .content {
     padding-inline-start: 3.5rem;
