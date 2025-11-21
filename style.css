@@ -18,6 +18,13 @@ a:hover {
   text-decoration: underline;
 }
 
+section p, section ul, section li {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.7;   /* or whatever your paragraph uses */
+  letter-spacing: 0.01em;  /* or whatever you use elsewhere */
+}
+
 .navbar {
   position: fixed;
   top: 0;
