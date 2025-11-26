@@ -172,7 +172,10 @@ section p, section ul, section li {
 }
 
 /* legg avstand mellom avsnitt automatisk */
-.intro-text .content p + p { margin-top: 1rem; }
+.intro-text .content p + p { 
+  margin-top: 1rem; 
+
+}
 
 .intro-text .opening-tagline {
   font-size: 0.95rem;
@@ -521,4 +524,10 @@ footer p {
 }
 .read-more-btn:hover {
   text-decoration: underline;
+}
+
+.intro-text .content,
+.timeline .content {
+  margin-top: 0;
+  margin-bottom: 0;
 }
