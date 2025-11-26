@@ -433,10 +433,11 @@ footer p {
 
 /* Vertical Timeline */
 .timeline {
-  margin-top: 0.5rem; 
+  margin-top: 0.5rem;
   position: relative;
   background: #fff;
-  padding-block: clamp(2rem, 4vw, 5rem);
+  padding-top: 0.75rem;
+  padding-bottom: 2rem;
 }
 
 
