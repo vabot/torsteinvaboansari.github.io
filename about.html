@@ -232,6 +232,26 @@
   <footer class="footer-bottom">
   <p>© 2025 Torstein Vabo Ansari · Norway</p>
 </footer>
+
+  <script>
+  const btns = document.querySelectorAll('.read-more-btn');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const section = btn.closest('.collapsible-section');
+      const content = section.querySelector('.collapsible-content');
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        btn.textContent = "Read more";
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        btn.textContent = "Read less";
+      }
+    });
+  });
+</script>
+  
 </body>
 </html>
   
