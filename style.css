@@ -149,7 +149,7 @@ section p, section ul, section li {
 .intro-text {
   background: #fff;
   padding-block: clamp(2rem, 4vw, 5rem);
-  padding-bottom: 0.5rem;
+  padding-bottom: 0rem;
 }
 
 .intro-text .content {
