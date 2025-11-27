@@ -531,3 +531,24 @@ footer p {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+/* This code is for the pictures inside the about-section */
+
+.story-image {
+  margin: 24px 0;
+  text-align: center;
+}
+
+.story-image img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.story-image figcaption {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 8px;
+}
